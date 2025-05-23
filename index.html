@@ -106,6 +106,43 @@
         .submit-btn:hover {
             background-color: #006f3f;
         }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .left-panel,
+            .right-panel {
+                width: 100%;
+                border-radius: 10px 10px 0 0;
+            }
+
+            .left-panel {
+                border-radius: 10px 10px 0 0;
+                text-align: center;
+            }
+
+            .right-panel {
+                padding: 20px;
+            }
+
+            .row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .label,
+            .value {
+                width: 100%;
+                margin-bottom: 5px;
+            }
+
+            .submit-btn {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 
@@ -113,13 +150,11 @@
     <div class="container">
         <div class="left-panel">
             <h3>Lưu ý</h3>
-            <p>Sau khi đặt lịch tại website, Quý khách vui lòng đợi bệnh viện xếp lịch và xác nhận thông qua điện thoại
-                hoặc tin nhắn SMS.</p>
+            <p>Sau khi đặt lịch tại website, Quý khách vui lòng đợi bệnh viện xếp lịch và xác nhận thông qua điện thoại hoặc tin nhắn SMS.</p>
             <p>Quý khách vui lòng đặt lịch tại website 24h trước khi đến khám để Mắt Sài Gòn có thể hỗ trợ tốt nhất.</p>
             <p>Trường hợp khẩn cấp, Quý khách liên hệ Tổng đài 1900 555 553 để được phản hồi nhanh nhất.</p>
             <p style="font-weight:bold; margin-top: 20px;">BỆNH VIỆN MẮT SÀI GÒN</p>
-            <img src="https://www.matsaigon.com/wp-content/uploads/logo-light.webp" alt="Logo Bệnh Viện Mắt Sài Gòn"
-                style="margin-top: 20px; max-width: 100%; height: auto;">
+            <img src="https://www.matsaigon.com/wp-content/uploads/logo-light.webp" alt="Logo Bệnh Viện Mắt Sài Gòn" style="margin-top: 20px; max-width: 100%; height: auto;">
         </div>
         <div class="right-panel">
             <h2>Eye Examination Result</h2>
@@ -186,22 +221,22 @@
                         <input type="text" id="phone" name="phone" required>
                     </div>
                     <div class="form-group">
-                            <label for="hospital">Chọn bệnh viện *</label>
-                            <select id="hospital" name="hospital" required>
-                                <option value="">Mắt Sài Gòn Nguyễn Du</option>
-                                <option value="hospital1">Mắt Sài Gòn Đường Láng</option>
-                                <option value="hospital2">Mắt Sài Gòn Sông Hàn</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Chọn dịch vụ *</label>
-                            <select id="service" name="service" required>
-                                <option value="">Điều trị bệnh lý mắt trẻ em</option>
-                                <option value="eye_exam">Điều trị lác/ lé</option>
-                                <option value="surgery">Phẫu thuật</option>
-                                <option value="orther">Điều trị khác</option>
-                            </select>
-                        </div>
+                        <label for="hospital">Chọn bệnh viện *</label>
+                        <select id="hospital" name="hospital" required>
+                            <option value="">Mắt Sài Gòn Nguyễn Du</option>
+                            <option value="hospital1">Mắt Sài Gòn Đường Láng</option>
+                            <option value="hospital2">Mắt Sài Gòn Sông Hàn</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Chọn dịch vụ *</label>
+                        <select id="service" name="service" required>
+                            <option value="">Điều trị bệnh lý mắt trẻ em</option>
+                            <option value="eye_exam">Điều trị lác/ lé</option>
+                            <option value="surgery">Phẫu thuật</option>
+                            <option value="orther">Điều trị khác</option>
+                        </select>
+                    </div>
                     <div class="form-group">
                         <label for="date">Chọn ngày đặt hẹn *</label>
                         <input type="date" id="date" name="date" required>
