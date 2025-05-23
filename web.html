@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eye Examination Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 20px;
+        }
+
+        p {
+            font-size: large;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background: white;
+            padding: 0;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+        }
+
+        .left-panel {
+            width: 35%;
+            background-color: #007a5c;
+            color: white;
+            padding: 30px 20px;
+            border-radius: 10px 0 0 10px;
+        }
+
+        .left-panel h3 {
+            margin-top: 0;
+        }
+
+        .right-panel {
+            width: 65%;
+            padding: 30px;
+        }
+
+        h2,
+        h3 {
+            color: #333;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
+
+        .label {
+            font-weight: bold;
+        }
+
+        .value {
+            color: #555;
+        }
+
+        .section-title {
+            margin-top: 20px;
+            font-size: 1.2em;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+
+        .form-wrapper h3 {
+            color: #006633;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .submit-btn {
+            background-color: #00834c;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background-color: #006f3f;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <h3>Lưu ý</h3>
+            <p>Sau khi đặt lịch tại website, Quý khách vui lòng đợi bệnh viện xếp lịch và xác nhận thông qua điện thoại
+                hoặc tin nhắn SMS.</p>
+            <p>Quý khách vui lòng đặt lịch tại website 24h trước khi đến khám để Mắt Sài Gòn có thể hỗ trợ tốt nhất.</p>
+            <p>Trường hợp khẩn cấp, Quý khách liên hệ Tổng đài 1900 555 553 để được phản hồi nhanh nhất.</p>
+            <p style="font-weight:bold; margin-top: 20px;">BỆNH VIỆN MẮT SÀI GÒN</p>
+            <img src="https://www.matsaigon.com/wp-content/uploads/logo-light.webp" alt="Logo Bệnh Viện Mắt Sài Gòn"
+                style="margin-top: 20px; max-width: 100%; height: auto;">
+        </div>
+        <div class="right-panel">
+            <h2>Eye Examination Result</h2>
+            <div class="row">
+                <div class="label">Examination ID:</div>
+                <div class="value">EE - 0001</div>
+            </div>
+            <div class="row">
+                <div class="label">Patient Name:</div>
+                <div class="value">Sean Wolf demo</div>
+            </div>
+
+            <div class="section-title">Left Eye (OS)</div>
+            <div class="row">
+                <div class="label">Sphere (S):</div>
+                <div class="value">5.0</div>
+            </div>
+            <div class="row">
+                <div class="label">Cylinder (C):</div>
+                <div class="value">5.5</div>
+            </div>
+            <div class="row">
+                <div class="label">Axis:</div>
+                <div class="value">175</div>
+            </div>
+
+            <div class="section-title">Right Eye (OD)</div>
+            <div class="row">
+                <div class="label">Sphere (S):</div>
+                <div class="value">3.0</div>
+            </div>
+            <div class="row">
+                <div class="label">Cylinder (C):</div>
+                <div class="value">3.0</div>
+            </div>
+            <div class="row">
+                <div class="label">Axis:</div>
+                <div class="value">179</div>
+            </div>
+
+            <div class="section-title">Additional Info</div>
+            <div class="row">
+                <div class="label">Pupillary Distance (PD):</div>
+                <div class="value">31.0</div>
+            </div>
+            <div class="row">
+                <div class="label">Created By:</div>
+                <div class="value">Demo MSG, 06:57, 23/05/2025</div>
+            </div>
+            <div class="row">
+                <div class="label">Last Modified By:</div>
+                <div class="value">Demo MSG, 06:57, 23/05/2025</div>
+            </div>
+
+            <div class="form-wrapper">
+                <h2>Đặt lịch khám</h2>
+                <form action="https://your-booking-url.com/submit" method="POST">
+                    <div class="form-group">
+                        <label for="fullname">Họ và tên *</label>
+                        <input type="text" id="fullname" name="fullname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Số điện thoại *</label>
+                        <input type="text" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hospital">Chọn bệnh viện *</label>
+                        <select id="hospital" name="hospital" required>
+                            <option value="">-- Chọn bệnh viện --</option>
+                            <option value="hospital1">Bệnh viện 1</option>
+                            <option value="hospital2">Bệnh viện 2</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Chọn dịch vụ *</label>
+                        <select id="service" name="service" required>
+                            <option value="">-- Chọn dịch vụ --</option>
+                            <option value="eye_exam">Khám mắt</option>
+                            <option value="surgery">Phẫu thuật</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Chọn ngày đặt hẹn *</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Mô tả lý do khám / Triệu chứng</label>
+                        <textarea id="description" name="description" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Đặt lịch khám</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
