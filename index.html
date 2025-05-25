@@ -3,12 +3,14 @@
 
 <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eye Examination Result</title>
+
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+
     <style>
-        *,
-        *::before,
-        *::after {
+        * {
             box-sizing: border-box;
         }
 
@@ -19,25 +21,14 @@
             padding: 0;
         }
 
-        .top-banner {
-            background-color: #007a5c;
-            text-align: center;
-            padding: 10px 0;
-        }
-
-        .top-banner img {
-            max-width: 100%;
-            height: auto;
-        }
-
         .container {
-            max-width: 900px;
-            background: white;
-            margin: 20px auto;
+            max-width: 1000px;
+            margin: 30px auto;
+            display: flex;
             border-radius: 10px;
             overflow: hidden;
+            background-color: white;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: flex;
             flex-direction: row;
         }
 
@@ -46,17 +37,21 @@
             background-color: #007a5c;
             color: white;
             padding: 30px 20px;
-            min-width: 0;
         }
 
         .left-panel h3 {
             margin-top: 0;
         }
 
+        .left-panel img {
+            margin-top: 20px;
+            max-width: 100%;
+            height: auto;
+        }
+
         .right-panel {
             width: 65%;
             padding: 30px;
-            min-width: 0;
         }
 
         h2,
@@ -87,6 +82,7 @@
 
         .form-wrapper h2 {
             color: #006633;
+            text-align: center;
         }
 
         .form-group {
@@ -104,9 +100,9 @@
         .form-group textarea {
             width: 100%;
             padding: 10px;
+            font-size: 16px;
             border-radius: 5px;
             border: 1px solid #ccc;
-            font-size: 16px;
         }
 
         .submit-btn {
@@ -129,7 +125,6 @@
             .container {
                 flex-direction: column;
                 margin: 10px;
-                padding-inline: 10px;
             }
 
             .left-panel,
@@ -157,20 +152,19 @@
 </head>
 
 <body>
-    <div class="top-banner">
-        <img src="https://www.matsaigon.com/wp-content/uploads/logo-light.webp" alt="Logo Bệnh Viện Mắt Sài Gòn" />
-    </div>
-
     <div class="container">
+        <!-- LEFT PANEL -->
         <div class="left-panel">
             <h3>Lưu ý</h3>
             <p>Sau khi đặt lịch tại website, Quý khách vui lòng đợi bệnh viện xếp lịch và xác nhận thông qua điện thoại
-                hoặc
-                tin nhắn SMS.</p>
+                hoặc tin nhắn SMS.</p>
             <p>Quý khách vui lòng đặt lịch tại website 24h trước khi đến khám để Mắt Sài Gòn có thể hỗ trợ tốt nhất.</p>
             <p>Trường hợp khẩn cấp, Quý khách liên hệ Tổng đài 1900 555 553 để được phản hồi nhanh nhất.</p>
             <p style="font-weight:bold; margin-top: 20px;">BỆNH VIỆN MẮT SÀI GÒN</p>
+            <img src="https://www.matsaigon.com/wp-content/uploads/logo-light.webp" alt="Logo Bệnh Viện Mắt Sài Gòn" />
         </div>
+
+        <!-- RIGHT PANEL -->
         <div class="right-panel">
             <h2>Eye Examination Result</h2>
             <div class="row">
@@ -225,27 +219,33 @@
             </div>
 
             <div class="form-wrapper">
-                <h2>Appoinment (Đặt lịch khám)</h2>
-                <form action="https://your-booking-url.com/submit" method="POST">
+                <h2>Đặt lịch khám</h2>
+                <form
+                    action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DgC000000fIgv"
+                    method="POST">
+                    <!-- Hidden Salesforce fields -->
+                    <input type="hidden" name="oid" value="00DgC000000fIgv">
+                    <input type="hidden" name="retURL" value="https://www.matsaigon.com/">
+
                     <div class="form-group">
-                        <label for="fullname">Full Name *</label>
-                        <input type="text" id="fullname" name="fullname" required />
+                        <label for="last_name">Họ và tên *</label>
+                        <input type="text" id="last_name" name="last_name" required>
                     </div>
                     <div class="form-group">
-                        <label for="phone">Phone *</label>
-                        <input type="text" id="phone" name="phone" required />
+                        <label for="phone">Số điện thoại *</label>
+                        <input type="text" id="phone" name="phone" required>
                     </div>
                     <div class="form-group">
-                        <label for="hospital">Hospital *</label>
-                        <select id="hospital" name="hospital" required>
+                        <label for="00NgC000001CQvp">Chọn bệnh viện *</label>
+                        <select id="00NgC000001CQvp" name="00NgC000001CQvp" required>
                             <option value="1">Mắt Sài Gòn Nguyễn Du</option>
                             <option value="2">Mắt Sài Gòn Đường Láng</option>
                             <option value="3">Mắt Sài Gòn Sông Hàn</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="service">Services *</label>
-                        <select id="service" name="service" required>
+                        <label for="00NgC000001CQxR">Chọn dịch vụ *</label>
+                        <select id="00NgC000001CQxR" name="00NgC000001CQxR" required>
                             <option value="1">Điều trị bệnh lý mắt trẻ em</option>
                             <option value="2">Điều trị lác/ lé</option>
                             <option value="3">Phẫu thuật</option>
@@ -253,14 +253,16 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="date">Date *</label>
-                        <input type="date" id="date" name="date" required />
+                        <label for="00NgC000001CQz3">Chọn ngày đặt hẹn *</label>
+                        <input type="date" id="00NgC000001CQz3" name="00NgC000001CQz3" placeholder="dd/mm/yyyy"
+                            required />
                     </div>
                     <div class="form-group">
-                        <label for="description">Description (Triệu chứng)</label>
-                        <textarea id="description" name="description" rows="4"></textarea>
+                        <label for="description">Mô tả lý do khám / Triệu chứng</label>
+                        <textarea name="description" rows="4"></textarea>
                     </div>
-                    <button type="submit" class="submit-btn">Submit</button>
+
+                    <button type="submit" class="submit-btn">Đặt lịch khám</button>
                 </form>
             </div>
         </div>
